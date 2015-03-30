@@ -29,12 +29,13 @@ public class Loader : MonoBehaviour {
 	void Start () {
 		for(int i = 0; i < textures.Length; i++) {
 			for (int j = 0; j < (i+1)*2-1; j++){
+
 				GameObject instance = Instantiate(prefab);
-				int step = i*2;
+				float step = i*2/10f;
 				setText (instance, names[i] + " #" + (j+1));
 				setIcon (instance, i);
-				float pos = j - (i + 1);
-				instance.transform.position = new Vector3(pos*10, step, step);
+				float pos = j*2/10f - (step + 0.1f);
+				instance.transform.position = new Vector3(pos*3, step-0.04f, step);
 
 				// Lines
 				if (i+1 >= textures.Length) {
@@ -48,11 +49,12 @@ public class Loader : MonoBehaviour {
 				for (int k = 0; k < numLines; k++) {
 					GameObject l = Instantiate(line);
 					LineRenderer lr = line.GetComponent<LineRenderer>();
-					float lineOffset = 0.4f;
-					lr.SetPosition(0, new Vector3(pos*10, step + lineOffset, step));
-					lr.SetPosition(1, new Vector3(pos*10, step+1 - lineOffset, step));
-					lr.SetPosition(2, new Vector3((pos + (k - numLines/2))*10, step+1 - lineOffset, step+2));
-					lr.SetPosition(3, new Vector3((pos + (k - numLines/2))*10, step+1.8f - lineOffset, step+2));
+					float lineOffset = 0.04f;
+					float upperPos = (j-k+1)*2/10f - (step + 0.1f);
+					lr.SetPosition(0, new Vector3(pos*3, step + lineOffset - 0.02f, step));
+					lr.SetPosition(1, new Vector3(pos*3, step+0.1f - lineOffset, step));
+					lr.SetPosition(2, new Vector3((upperPos)*3, step+0.1f - lineOffset, step+0.2f));
+					lr.SetPosition(3, new Vector3((upperPos)*3, step+0.14f - lineOffset, step+0.2f));
 					lr.SetColors(
 						colors[i],
 						colors[i]

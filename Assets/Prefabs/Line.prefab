@@ -53,13 +53,13 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 40, y: 10.3999996, z: 10}
-  - {x: 40, y: 10.6000004, z: 10}
-  - {x: 40, y: 10.6000004, z: 12}
-  - {x: 40, y: 11.3999996, z: 12}
+  - {x: 2.69999981, y: 1.01999998, z: 1}
+  - {x: 2.69999981, y: 1.05999994, z: 1}
+  - {x: 2.0999999, y: 1.05999994, z: 1.20000005}
+  - {x: 2.0999999, y: 1.10000002, z: 1.20000005}
   m_Parameters:
-    startWidth: .0399999991
-    endWidth: .0399999991
+    startWidth: .00400000019
+    endWidth: .00400000019
     m_StartColor:
       serializedVersion: 2
       rgba: 4294901760
